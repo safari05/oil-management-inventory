@@ -1,0 +1,12 @@
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\bin\Debug\net6.0\Oil.Management.Entities.deps.json
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\bin\Debug\net6.0\Oil.Management.Entities.dll
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\bin\Debug\net6.0\Oil.Management.Entities.pdb
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.csproj.AssemblyReference.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.AssemblyInfoInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.AssemblyInfo.cs
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.csproj.CoreCompileInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.dll
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\refint\Oil.Management.Entities.dll
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\Oil.Management.Entities.pdb
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Entities\obj\Debug\net6.0\ref\Oil.Management.Entities.dll

@@ -1,0 +1,12 @@
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\bin\Debug\net6.0\UnitTest.Eri.deps.json
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\bin\Debug\net6.0\UnitTest.Eri.dll
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\bin\Debug\net6.0\UnitTest.Eri.pdb
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.csproj.AssemblyReference.cache
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.AssemblyInfoInputs.cache
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.AssemblyInfo.cs
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.csproj.CoreCompileInputs.cache
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.dll
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\refint\UnitTest.Eri.dll
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\UnitTest.Eri.pdb
+C:\Work\Side Job\Oil.Management.Web\UnitTest.Eri\obj\Debug\net6.0\ref\UnitTest.Eri.dll

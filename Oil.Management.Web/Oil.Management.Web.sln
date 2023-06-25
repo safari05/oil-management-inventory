@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oil.Management.Web", "Oil.Management.Web.csproj", "{21A7E502-4300-494F-BFAC-4217CF4C84FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationManagement", "ApplicationManagement", "{99809576-89B4-4978-8993-386C90691370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplMgt.Services", "..\ApplMgt.Services\ApplMgt.Services.csproj", "{AC5D4795-1330-42C1-80FA-52DA8B0C41C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oil.Management.Entities", "..\Oil.Management.Entities\Oil.Management.Entities.csproj", "{2FFE2416-CA36-419F-86AA-4600E0F98B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oil.Management.Services", "..\Oil.Management.Services\Oil.Management.Services.csproj", "{E10EDB82-679C-47BD-9425-3145C5037C39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oil.Management.Shared", "..\Oil.Management.Shared\Oil.Management.Shared.csproj", "{A38EAE3F-681E-4740-BD66-F76F10E18107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.Eri", "..\UnitTest.Eri\UnitTest.Eri.csproj", "{ECCC2AEF-729A-47BA-BBFB-7C0AD76A73D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21A7E502-4300-494F-BFAC-4217CF4C84FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A7E502-4300-494F-BFAC-4217CF4C84FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A7E502-4300-494F-BFAC-4217CF4C84FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A7E502-4300-494F-BFAC-4217CF4C84FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5D4795-1330-42C1-80FA-52DA8B0C41C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5D4795-1330-42C1-80FA-52DA8B0C41C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5D4795-1330-42C1-80FA-52DA8B0C41C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5D4795-1330-42C1-80FA-52DA8B0C41C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFE2416-CA36-419F-86AA-4600E0F98B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFE2416-CA36-419F-86AA-4600E0F98B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFE2416-CA36-419F-86AA-4600E0F98B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFE2416-CA36-419F-86AA-4600E0F98B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10EDB82-679C-47BD-9425-3145C5037C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10EDB82-679C-47BD-9425-3145C5037C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10EDB82-679C-47BD-9425-3145C5037C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10EDB82-679C-47BD-9425-3145C5037C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38EAE3F-681E-4740-BD66-F76F10E18107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38EAE3F-681E-4740-BD66-F76F10E18107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38EAE3F-681E-4740-BD66-F76F10E18107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38EAE3F-681E-4740-BD66-F76F10E18107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCC2AEF-729A-47BA-BBFB-7C0AD76A73D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCC2AEF-729A-47BA-BBFB-7C0AD76A73D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCC2AEF-729A-47BA-BBFB-7C0AD76A73D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCC2AEF-729A-47BA-BBFB-7C0AD76A73D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC5D4795-1330-42C1-80FA-52DA8B0C41C2} = {99809576-89B4-4978-8993-386C90691370}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FF1998F-E878-4753-828A-8D54453D5198}
+	EndGlobalSection
+EndGlobal

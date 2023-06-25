@@ -1,0 +1,17 @@
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\ApplMgt.Services.deps.json
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\ApplMgt.Services.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\ApplMgt.Services.pdb
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.csproj.AssemblyReference.cache
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.AssemblyInfoInputs.cache
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.AssemblyInfo.cs
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.csproj.CoreCompileInputs.cache
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\refint\ApplMgt.Services.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.pdb
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ref\ApplMgt.Services.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\Oil.Management.Entities.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\Oil.Management.Shared.dll
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\Oil.Management.Shared.pdb
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\bin\Debug\net6.0\Oil.Management.Entities.pdb
+C:\Work\Side Job\Oil.Management.Web\ApplMgt.Services\obj\Debug\net6.0\ApplMgt.Services.csproj.CopyComplete
