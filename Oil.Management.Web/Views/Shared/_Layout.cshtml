@@ -1,49 +1,162 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Oil.Management.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Oil.Management.Web.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+
+    <title>@ViewData["Title"] - ADM Schools</title>
+    <!-- General CSS Files -->
+    <!-- CSS General styles-->
+    <link rel="stylesheet" href="~/css/style-shared.css" />
+    <script src="~/plugins/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/stisla-ui/plugins/bootstrap/bootstrap.min.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="~/plugins/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="~/plugins/fontawesome/css/fontawesome.css" />
+    <!-- plugin -->
+    <link rel="stylesheet" href="~/plugins/datepicker/datepicker.css" />
+    <link rel="stylesheet" href="~/plugins/clockpicker/jquery-clockpicker.min.css" />
+    <link rel="stylesheet" href="~/plugins/datatable/1.10.19/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/plugins/izitoast/css/iziToast.min.css" />
+    <link rel="stylesheet" href="~/plugins/sweetalert/dist/sweetalert.css" />
+    <link rel="stylesheet" href="~/plugins/animated/animated.css" />
+    <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.css" />
+    <link rel="stylesheet" href="~/plugins/select2/dist/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="~/css/style-shared.css" />
+    <!-- CSS Libraries -->
+    <!-- not content flot for libraries-->
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/stisla-ui/css/style.css">
+    <link rel="stylesheet" href="~/stisla-ui/css/components.css">
+
+    <script type="text/javascript">
+        function ProgressBar(Status) {
+            if (Status == "wait") {
+                $("body").css("cursor", "progress");
+                $("#loading").removeAttr("style");
+            } else if (Status == "success") {
+                $("body").css("cursor", "default");
+                $("#loading").css("display", "none");
+            }
+        }
+        function ProgressBarForm(Status) {
+            if (Status == "wait") {
+                $("body").css("cursor", "progress");
+                $(".loading-form").removeAttr("style");
+            } else if (Status == "success") {
+                $("body").css("cursor", "default");
+                $(".loading-form").css("display", "none");
+            }
+        }
+
+        $(document).ready(function () {
+            if (jQuery().summernote) {
+                setTimeout((e) => {
+                    $('.summernote').summernote({
+                        placeholder: 'Hello Bootstrap 4',
+                        tabsize: 20,
+                        height: 300
+                    });
+                }, 5000)
+
+                $('.summernote').summernote('destroy');
+
+                $(".summernote-simple").summernote({
+                    dialogsInBody: true,
+                    minHeight: 310,
+                    toolbar: [
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough']],
+                        ['para', ['paragraph']]
+                    ]
+                });
+            }
+
+            $('.select2').select2({
+                
+                minimumResultsForSearch: -1
+            });
+        })
+    </script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Oil.Management.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            @await Component.InvokeAsync("MenuApp")
+
+            <!-- Main Content -->
+        <div class="main-content">
+            <!-- this will show our spinner -->
+            <div hidden id="spinner"></div>
             @RenderBody()
-        </main>
+        </div>
+
+
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy; 2020 <div class="bullet"></div> Design By <a href="jajavscript:void(0)">Eri Safari</a>
+                </div>
+                <div class="footer-right">
+                    2.3.0
+                </div>
+            </footer>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Oil.Management.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/plugins/popper.js"></script>
+    <script src="~/plugins/tooltip.js"></script>
+    <script src="~/stisla-ui/js/stisla.js"></script>
+    <script src="~/stisla-ui/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="~/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="~/plugins/moment.min.js"></script>
+    <script src="~/plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="~/plugins/summernote/summernote-bs4.js"></script>
+    <script src="~/plugins/datepicker/datepicker.js"></script>
+    <script src="~/plugins/clockpicker/jquery-clockpicker.min.js"></script>
+    <script src="~/plugins/prism/prism.js"></script>
+    <script src="~/plugins/izitoast/js/iziToast.min.js"></script>
+    <script src="~/plugins/sweetalert/dist/sweetalert.js"></script>
+    <script src="~/plugins/datatable/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="~/plugins/datatable/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="~/stisla-ui/js/scripts.js"></script>
+    <script src="~/stisla-ui/js/custom.js"></script>
+    <script>
+        const protocol_access = location.protocol + '//';
+        var base_url = protocol_access + document.location.host;
+        $('.dates')
+            .datepicker({
+                format: 'dd-mm-yyyy'
+            })
+            .on('changeDate', function (e) {
+                // Revalidate the date field
+                fv.revalidateField('date');
+            });
+    </script>
+
+    <script src="~/appjs/common.js"></script>
+    <script src="~/appjs/SetDropdown.js"></script>
+    @{
+        if (ViewBag.ModuleJs != null)
+        {
+            foreach (var ret in ViewBag.ModuleJs)
+            {
+                <script src="~/appjs/@ret.Path/@ret.Name" type="text/javascript"></script>
+            }
+        }
+
+    }
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

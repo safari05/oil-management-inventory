@@ -41,5 +41,6 @@ namespace Oil.Management.Entities.Master
         [Column("pic_email")]
         public string PicEmail { get; set; }
         [Column("priority")]
+        public int Priority { get; set; }
     }
 }

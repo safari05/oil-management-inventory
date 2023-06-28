@@ -1,16 +1,15 @@
 ﻿/**
- * Sign User Javascript (DKM ADM).
+ * Sign User Javascript (OIL MANAGEMENT SYSTEM).
  *
  * Javascript for the Sign module.
  *
  * Contents:
  *
  *
- * @package DKM ADM.
+ * @package 
  * @author Eri Safari <safari.erie@gmail.com>
  * @website
  * @version 1.0.0
- * @date 22 Sep 2020
  * @copyright (c) 2020
  */
 

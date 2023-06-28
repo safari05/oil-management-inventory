@@ -68,7 +68,16 @@ namespace Oil.Management.Services
 
         public UserModel Login(string UsernameOrEmail, string Password, out string oMessage)
         {
-            throw new NotImplementedException();
+            oMessage = string.Empty;
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                oMessage = common.GetErrorMessage(ServiceName + "Login", ex);
+                return null;
+            }
         }
 
         public string ResetPassword(string UsernameOrEmail, out string oMessage)
