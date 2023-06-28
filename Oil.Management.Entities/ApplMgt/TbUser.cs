@@ -42,7 +42,7 @@ namespace Oil.Management.Entities.ApplMgt
 
 
         [Column("status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
         [Column("last_login")]
         public DateTime? LastLogin { get; set; }
 
