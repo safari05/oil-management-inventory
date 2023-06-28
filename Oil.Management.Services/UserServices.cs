@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Oil.Management.Entities.ApplMgt;
 using Oil.Management.Shared;
+using Oil.Management.Shared.Constants;
 using Oil.Management.Shared.Interfaces;
 using Oil.Management.Shared.ViewModels.ApplMgt;
 using System;
@@ -71,7 +72,68 @@ namespace Oil.Management.Services
             oMessage = string.Empty;
             try
             {
+                if (string.IsNullOrEmpty(UsernameOrEmail))
+                {
+                    oMessage = "Username or email tidak boleh kosong";
+                    return null;
+                }
+                if (string.IsNullOrEmpty(Password))
+                {
+                    oMessage = "Password tidak boleh kosong";
+                    return null;
+                }
 
+                using(IDbConnection conn = common.DbConnection)
+                {
+                    conn.Open();
+                    var tbUser = (from a in conn.GetList<TbUser>()
+                                  where a.Username == UsernameOrEmail || a.Email == UsernameOrEmail
+                                  select new { a }).FirstOrDefault();
+                    if (tbUser != null)
+                    {
+                        oMessage = "User tidak terdaftar";
+                        return null;
+
+                    }
+                    if(tbUser.a.Status != StatusDataConstant.Aktif)
+                    {
+                        oMessage = "User sudah terdaftar , sudah tidak aktif/ belum aktif";
+                        return null;
+                    }
+
+                    string _password = common.DecryptString(Password);
+                    if (_password != Password)
+                    {
+                        oMessage = "Password Salah";
+                        return null;
+                    }
+
+                    var _userRoles = (from a in conn.GetList<TbUserRole>()
+                                      join b in conn.GetList<TbRole>() on a.IdRole equals b.IdRole
+                                      where a.IdUser == tbUser.a.IdUser
+                                      select new RoleModel
+                                      {
+                                          IdRole = b.IdRole,
+                                          RoleName = b.RoleName
+                                      }).ToList();
+
+                    return new UserModel
+                    {
+                        IdUser = tbUser.a.IdUser,
+                        UserName = tbUser.a.Username,
+                        Password = null,
+                        Email = tbUser.a.Email,
+                        StrStatus = StatusDataConstant.DictStatusData[tbUser.a.Status],
+                        Address = tbUser.a.Address,
+                        FirstName = tbUser.a.FirstName,
+                        MiddleName = tbUser.a.MiddleName,
+                        LastName = tbUser.a.LastName,
+                        FileImage = tbUser.a.FileImage,
+                        LastLogin = tbUser.a.LastLogin == null ? null : tbUser.a.LastLogin.ToString(),
+                        Roles = _userRoles
+
+                    };
+                }
             }
             catch (Exception ex)
             {
