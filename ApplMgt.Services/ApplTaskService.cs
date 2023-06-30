@@ -21,7 +21,7 @@ namespace ApplMgt.Services
             oMessage = string.Empty;
             try
             {
-                using(IDbConnection conn = common.DbConnection)
+                using (IDbConnection conn = common.DbConnection)
                 {
                     conn.Open();
                     var ret = (from a in conn.GetList<TbUserRole>()
@@ -38,11 +38,8 @@ namespace ApplMgt.Services
                                    Description = d.Description,
                                    IdApplTaskParent = d.IdApplTaskParent,
                                    IconName = d.IconName
-                               }
-                               ).OrderBy(x => x.IdApplTask).ToList();
-
+                               }).OrderBy(x => x.IdApplTask).ToList();
                     return ret;
-
                 }
             }
             catch (Exception ex)

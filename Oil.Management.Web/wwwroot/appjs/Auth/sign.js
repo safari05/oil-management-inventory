@@ -65,12 +65,13 @@ var urls = {
             console.log(response);
               if (response.IsSuccess) {
                   ProgressBar("success");
-                  iziToast.success({
-                      title: "Login Berhasil Selamat Datang " + response.Data.FirstName,
-                      message: 'Anda akan diarahkan kehalaman utama',
-                      position: 'topRight',
-                      timeout: 3000
-                  });
+                  //iziToast.success({
+                  //    title: "Login Berhasil Selamat Datang " + response.Data.firstName,
+                  //    message: 'Anda akan diarahkan kehalaman utama',
+                  //    position: 'topRight',
+                  //    timeout: 3000
+                  //});
+                  console.log(base_url);
                   setTimeout(function () {
                       window.location.href = base_url + "/Home";
                       $('#ProsesLoading').hide();

@@ -21,5 +21,7 @@ namespace Oil.Management.Shared.Interfaces
         string UpdateProfile(int IdUser, string Email, string FirstName, string MiddleName, string LastName, string Address, string PhoneNumber, string MobileNumber, IFormFile FileImage);
         string SetUserActive(int IdUser, int SetIdUser, out string oMessage);
         string SetUserInActive(int IdUser, int SetIdUser, out string oMessage);
+
+        string setPassword(string Password, out string oMessage);
     }
 }

@@ -29,10 +29,12 @@ namespace Oil.Management.Web.Controllers
 
         public ResponseModel<UserModel> Login (string UsernameOrEmail, string Password)
         {
-            UserModel ret = _userServices.Login(UsernameOrEmail, Password, out string oMessage);
-            bool isSuccess = (string.IsNullOrEmpty(oMessage)) ? true:false;
+            string asPassword = _userServices.setPassword(Password, out string oMessage1);
 
-            if (isSuccess)
+            UserModel ret = _userServices.Login(UsernameOrEmail, Password, out string oMessage);
+           // bool isSuccess = (string.IsNullOrEmpty(oMessage)) ? true:false;
+            var IsSuccess = (string.IsNullOrEmpty(oMessage)) ? true : false;
+            if (IsSuccess)
             {
 
                 // store to session
@@ -42,7 +44,7 @@ namespace Oil.Management.Web.Controllers
                 HttpContext.Session.SetString("NamaPengguna", ret.FirstName);
                 return new ResponseModel<UserModel>
                 {
-                    IsSuccess = false,
+                    IsSuccess = true,
                     ReturnMessage = oMessage,
                     Data = ret
                 };

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Oil.Management.Shared.Interfaces;
 using Oil.Management.Services;
 using Oil.Management.Shared.Settings;
+using ApplMgt.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +19,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 // Register interface and classes
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IApplTaskService, ApplTaskService>();
 
+builder.Services.AddMemoryCache();
 
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(o =>
+{
+    o.JsonSerializerOptions.PropertyNamingPolicy = null;
+    o.JsonSerializerOptions.DictionaryKeyPolicy = null;
+});
 // Add services to the container.
 
 

@@ -33,7 +33,6 @@ namespace Oil.Management.Web.Controllers
 
         public IActionResult Index()
         {
-            var users = this.GetUsers();
             return View();
         }
 

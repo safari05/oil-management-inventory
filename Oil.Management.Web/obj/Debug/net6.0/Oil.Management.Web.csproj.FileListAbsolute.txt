@@ -1,3 +1,11 @@
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.AssemblyReference.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfoInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfo.cs
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.CoreCompileInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cs
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\appsettings.json
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\Oil.Management.Web.staticwebassets.runtime.json
@@ -78,14 +86,6 @@ C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\ApplMgt.
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\Oil.Management.Services.pdb
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\Oil.Management.Shared.pdb
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\bin\Debug\net6.0\Oil.Management.Entities.pdb
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.AssemblyReference.cache
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfoInputs.cache
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfo.cs
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.CoreCompileInputs.cache
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cache
-C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cs
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\staticwebassets.build.json
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\staticwebassets.development.json
 C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css

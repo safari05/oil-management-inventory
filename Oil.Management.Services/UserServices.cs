@@ -89,7 +89,7 @@ namespace Oil.Management.Services
                     var tbUser = (from a in conn.GetList<TbUser>()
                                   where a.Username == UsernameOrEmail || a.Email == UsernameOrEmail
                                   select new { a }).FirstOrDefault();
-                    if (tbUser != null)
+                    if (tbUser == null)
                     {
                         oMessage = "User tidak terdaftar";
                         return null;
@@ -101,7 +101,7 @@ namespace Oil.Management.Services
                         return null;
                     }
 
-                    string _password = common.DecryptString(Password);
+                    string _password = common.Decrypt(tbUser.a.Password);
                     if (_password != Password)
                     {
                         oMessage = "Password Salah";
@@ -140,11 +140,37 @@ namespace Oil.Management.Services
                 oMessage = common.GetErrorMessage(ServiceName + "Login", ex);
                 return null;
             }
-        }
+            }
 
         public string ResetPassword(string UsernameOrEmail, out string oMessage)
         {
             throw new NotImplementedException();
+        }
+
+        public string setPassword(string Password, out string oMessage)
+        {
+            oMessage = string.Empty;
+            if (string.IsNullOrEmpty(Password))
+            {
+                oMessage = "Password tidak boleh kosong";
+                return null;
+            }
+            try
+            {
+                string _createRandomPassword = common.Encrypt(Password);
+                string _decryp = common.Decrypt(_createRandomPassword);
+                if (Password != _decryp)
+                {
+                    oMessage = "Password tidak sesuai";
+                    return null;
+                }
+                return _createRandomPassword;
+            }catch (Exception ex)
+            {
+                oMessage = common.GetErrorMessage(ServiceName + "SetPassword", ex);
+                return null;
+            }
+
         }
 
         public string SetUserActive(int IdUser, int SetIdUser, out string oMessage)
