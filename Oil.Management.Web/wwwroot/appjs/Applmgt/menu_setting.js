@@ -94,11 +94,11 @@ function TabelMenuSetting(idAppl) {
 }
 
 
-ComboGetAppl(function (HtmlCombo) {
+//ComboGetAppl(function (HtmlCombo) {
    
-    $("select[name='IdAppl']", "#FormTabelMenuAplikasi").empty();
-    $("select[name='IdAppl']", "#FormTabelMenuAplikasi").append(HtmlCombo);
-});
+//    $("select[name='IdAppl']", "#FormTabelMenuAplikasi").empty();
+//    $("select[name='IdAppl']", "#FormTabelMenuAplikasi").append(HtmlCombo);
+//});
 
 // trigger onchange
 $("select[name='IdAppl']").change(function () {
@@ -132,45 +132,6 @@ $("select[name='IdAppl']").change(function () {
 
 
 
-function ComboGetAppl(handleData, IdAppl) {
-    var Url = urls.GetAppl;
-    $.ajax({
-        url: Url,
-        type: "GET",
-        dataType: "json",
-        beforeSend: function (beforesend) {
-            ProgressBar("wait");
-        },
-        success: function (responsesuccess) {
-            ProgressBar("success");
-            
-            if (responsesuccess.IsSuccess == true) {
-                var HtmlCombo = "";
-                var JmlData = (responsesuccess.Data).length;
-                HtmlCombo += "<option value=''>- Pilih Salah Satu -</option>";
-                for (var idata = 0; idata < JmlData; idata++) {
-                    if (responsesuccess.Data[idata].IdAppl == IdAppl) {
-                        HtmlCombo += "<option value='" + responsesuccess.Data[idata].IdAppl + "' selected>" + responsesuccess.Data[idata].ApplName + "</option>";
-                    } else {
-                        HtmlCombo += "<option value='" + responsesuccess.Data[idata].IdAppl + "'>" + responsesuccess.Data[idata].ApplName + "</option>";
-                    }
-                }
-
-                handleData(HtmlCombo);
-            }
-        },
-        error: function (responserror, a, e) {
-            ProgressBar("success");
-            swal({
-                title: 'Error :(',
-                text: JSON.stringify(responserror) + " : " + e,
-                confirmButtonClass: 'btn-danger text-white',
-                confirmButtonText: 'Oke, Mengerti',
-                type: 'error'
-            });
-        }
-    });
-}
 
 function ComboGetParentMenu(handleData, IdApplTaskParent, IdAppl) {
    
