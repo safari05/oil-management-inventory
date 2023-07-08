@@ -20,6 +20,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 // Register interface and classes
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IApplTaskService, ApplTaskService>();
+builder.Services.AddScoped<IApplReferenceService, ApplReferenceService>();
 
 builder.Services.AddMemoryCache();
 

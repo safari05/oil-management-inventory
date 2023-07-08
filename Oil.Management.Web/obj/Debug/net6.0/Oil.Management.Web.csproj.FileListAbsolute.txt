@@ -1,0 +1,8 @@
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.AssemblyReference.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfoInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.AssemblyInfo.cs
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.csproj.CoreCompileInputs.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cache
+C:\Work\Side Job\Oil.Management.Web\Oil.Management.Web\obj\Debug\net6.0\Oil.Management.Web.RazorAssemblyInfo.cs

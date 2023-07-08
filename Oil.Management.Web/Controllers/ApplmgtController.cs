@@ -24,6 +24,13 @@ namespace Oil.Management.Web.Controllers
             ViewBag.ModuleJs = ApplSetings;
             return View();
         }
+
+        public IActionResult user_management()
+        {
+            var ApplSetings = ModuleJs("UserManagement");
+            ViewBag.ModuleJs = ApplSetings;
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
@@ -45,11 +52,20 @@ namespace Oil.Management.Web.Controllers
                 Type = "Module"
             };
 
+            AppLibraryModel UserManagement = new AppLibraryModel
+            {
+                Name = "user_management.js",
+                Path = "applmgt",
+                Type = "Module"
+            };
 
 
-            if(moduleName == "MenuSetting")
+            if (moduleName == "MenuSetting")
             {
                 ret.Add(menuApp);
+            }else if(moduleName == "UserManagement")
+            {
+                ret.Add(UserManagement);
             }
 
 
