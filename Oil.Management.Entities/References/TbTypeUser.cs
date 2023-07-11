@@ -11,7 +11,8 @@ namespace Oil.Management.Entities.References
     [Table("tb_type_user")]
     public class TbTypeUser
     {
-        [Key,Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_type_user")]
         public int IdTypeUser { get; set; }
         [Column("type_name")]

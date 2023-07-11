@@ -33,35 +33,23 @@ namespace Oil.Management.Services
                 using(var conn = common.DbConnection)
                 {
                     conn.Open();
-                    using (var tx = conn.BeginTransaction())
+                    var tbTypeUser = (from a in conn.GetList<TbTypeUser>()
+                                      where a.TypeName == data.TypeName
+                                      select a).ToList();
+
+                    if (tbTypeUser != null && tbTypeUser.Count > 0)
                     {
-                        try
-                        {
-                            var tbTypeUser = (from a in conn.GetList<TbTypeUser>()
-                                              where a.TypeName == data.TypeName
-                                              select a).ToList();
-                            if (tbTypeUser != null && tbTypeUser.Count > 0)
-                            {
-                                message = "Type Username already exist";
-                                return message;
-                            }
-
-                            TbTypeUser newTbTypeUser = new TbTypeUser
-                            {
-                                IdTypeUser = 1,
-                                TypeName = data.TypeName,
-                            };
-                            var _typeUser = conn.Insert(newTbTypeUser);
-
-                            tx.Commit();
-                            return message;
-                        }
-                        catch (Exception ex)
-                        {
-                            tx.Rollback();
-                            return common.GetErrorMessage(ServiceName + "AddTypeUser", ex);
-                        }
+                        message = "Type Username already exist";
+                        return message;
                     }
+
+                    TbTypeUser newTbTypeUser = new TbTypeUser
+                    {
+                        TypeName = data.TypeName,
+                    };
+                    var _typeUser = conn.Insert(newTbTypeUser);
+
+                    return message;
                 }
                 
             }
