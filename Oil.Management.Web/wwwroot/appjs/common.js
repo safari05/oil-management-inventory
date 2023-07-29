@@ -148,3 +148,114 @@ function isCharacter(event) {
     }
 
 }
+
+
+function GantiPassword() {
+    $("#ModalFormGantiPassword").modal("show");
+    var Url = base_url + "/Users/GetUserUpdateProfile";
+  
+}
+
+function SaveGantiPassword() {
+    var formObj = $('#FormChangePassword').serializeObject();
+    var Url = base_url + "/Users/ChangePassword?UsernameOrEmail=" + formObj.UsernameOrEmail + "&OldPassword=" + formObj.OldPassword + "&NewPassword1=" + formObj.NewPassword1 + "&NewPassword2=" + formObj.NewPassword2;
+    $.ajax({
+        url: Url,
+        method: "POST",
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        beforeSend: function (before) {
+            ProgressBar("wait");
+        },
+        success: function (responsesave) {
+            ProgressBar("success");
+            if (responsesave.IsSuccess == true) {
+                $("#ModalFormGantiPassword").modal("hide");
+                swal({
+                    title: 'Berhasil Merubah Password',
+                    text: "",
+                    confirmButtonClass: 'btn-success text-white',
+                    confirmButtonText: 'Oke, Mengerti',
+                    type: 'success'
+                });
+            } else if (responsesave.IsSuccess == false) {
+                swal({
+                    title: 'Gagal Merubah Password',
+                    text: responsesave.ReturnMessage,
+                    confirmButtonClass: 'btn-danger text-white',
+                    confirmButtonText: 'Oke, Mengerti',
+                    type: 'error'
+                });
+            }
+        },
+        error: function (errorresponse) {
+            swal({
+                title: 'Gagal Merubah Password',
+                text: errorresponse,
+                confirmButtonClass: 'btn-danger text-white',
+                confirmButtonText: 'Oke, Mengerti',
+                type: 'error'
+            });
+        }
+    });
+}
+
+
+function UpdateProfile() {
+    $("#ModalFormUpdateProfile").modal("show");
+    //$('#FormUpdateProfile')[0].reset();
+    $("#BtnSaveUpdateProfile").attr("onClick", "SaveUpdateProfile();");
+
+    var Url = base_url + "/Users/GetUserUpdateProfile";
+    $.ajax({
+        url: Url,
+        type: "GET",
+        dataType: "json",
+        beforeSend: function (beforesend) {
+            ProgressBar("wait");
+        },
+        success: function (responsesuccess) {
+            ProgressBar("success");
+            if (responsesuccess.IsSuccess == true) {
+                var ResponseData = responsesuccess.Data;
+                var FullName = (ResponseData.FirstName + " " + ResponseData.MiddleName + " " + ResponseData.LastName).toLowerCase().replace(/\b[a-z]/g, function (letter) {
+                    return letter.toUpperCase();
+                });
+                $("#TitleFormUpdateProfile").html("Edit Profil - " + SetFullName(ResponseData.FirstName, ResponseData.MiddleName, ResponseData.LastName));
+                $("input[name='Email']", "#FormUpdateProfile").val(ResponseData.Email);
+                $("input[name='FirstName']", "#FormUpdateProfile").val(ResponseData.FirstName);
+                $("input[name='MiddleName']", "#FormUpdateProfile").val(ResponseData.MiddleName);
+                $("input[name='LastName']", "#FormUpdateProfile").val(ResponseData.LastName);
+                $("textarea[name='Address']", "#FormUpdateProfile").val(ResponseData.Address);
+                $("input[name='PhoneNumber']", "#FormUpdateProfile").val(ResponseData.PhoneNumber);
+                $("input[name='MobileNumber']", "#FormUpdateProfile").val(ResponseData.MobileNumber);
+
+                $("#ThumbnailImage", "#FormUpdateProfile").removeAttr("src").attr("src", base_url + "/FotoProfile/" + ResponseData.ProfileFile);
+            } else {
+                swal({
+                    title: 'Gagal :(',
+                    text: responsesuccess.ReturnMessage,
+                    confirmButtonClass: 'btn-danger text-white',
+                    confirmButtonText: 'Oke, Mengerti',
+                    type: 'error'
+                });
+            }
+        },
+        error: function (responserror, a, e) {
+            ProgressBar("success");
+            swal({
+                title: 'Error :(',
+                text: JSON.stringify(responserror) + " : " + e,
+                confirmButtonClass: 'btn-danger text-white',
+                confirmButtonText: 'Oke, Mengerti',
+                type: 'error'
+            });
+        }
+    });
+
+    
+}

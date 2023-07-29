@@ -15,5 +15,10 @@ namespace Oil.Management.Shared.Interfaces
         TypeUserModel GetTypeUser(int IdTypeUser, out string oMessage);
 
         string EditTypeUser (int IdUser, TypeUserModel data);
+
+        List<SelectComboStrModel> GetSatuanVolume ();
+        List<SelectComboModel> GetStatusTransactionDict(); 
+
+       
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oil.Management.Shared.Interfaces
+namespace Oil.Management.Entities.Master
 {
-    internal interface ITransanction
+    internal class TmCompany
     {
     }
 }

@@ -3,7 +3,7 @@ using Oil.Management.Web.Models;
 
 namespace Oil.Management.Web.Controllers
 {
-    public class ReferensiController : Controller
+    public class ReferensiController : BaseController
     {
         public IActionResult Index()
         {

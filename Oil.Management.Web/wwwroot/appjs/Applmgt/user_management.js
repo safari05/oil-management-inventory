@@ -12,7 +12,7 @@ var TabelManajemenUser = $('#TabelManajemenUser').DataTable({
     "scrollX": true,
     "processing": true,
     "ajax": {
-        "url": base_url + "/Users/GetUsers",
+        "url": base_url + "/User/GetUsers",
         "method": 'GET',
         "beforeSend": function (xhr) { },
         "dataSrc": function (json) {
@@ -30,51 +30,50 @@ var TabelManajemenUser = $('#TabelManajemenUser').DataTable({
             }
         }
     },
-    "columns": [{
-        "data": "IdUser",
-        "render": function (data, type, full, meta) {
-            var Data = "";
-            var ParamStatus = "SetStatus('" + full.IdUser + "','" + full.FirstName + "','" + full.StrStatus + "')";
-            Data += '<button type="button" onClick="EditUser(' + full.IdUser + ')" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Edit</button>&nbsp;&nbsp;';
-            Data += '&nbsp;&nbsp;&nbsp;';
-            if (full.StrStatus == "Aktif") {
-                Data += '<button type="button" class="btn btn-danger btn-sm" onClick="' + ParamStatus + '"><i class="fa fa-times"></i> Deaktivasi</button>';
-            } else {
-                Data += '<button type="button" class="btn btn-success btn-sm" onClick="' + ParamStatus + '"><i class="fa fa-check"></i> Aktivasi</button>';
+    "columns": [
+        {
+            "data": "UserName"
+        },{
+            "data": "Email"
+        },
+        
+        {
+            "render": function (data, type, full, meta) {
+                var data = SetFullName(full.FirstName, full.MiddleName, full.LastName);
+                return data;
             }
-            data = Data;
-            return data;
-        }
-    },
-    {
-        "data": "Username"
-    },
-    {
-        "data": "Password"
-    },
-    {
-        "data": "Email"
-    },
-    {
-        "render": function (data, type, full, meta) {
-            var data = SetFullName(full.FirstName, full.MiddleName, full.LastName);
-            return data;
-        }
-    },
-    {
-        "render": function (data, type, full, meta) {
-            var Data = "";
-            if (full.StrStatus == "Aktif") {
-                Data += '<span style="color:green;font-weight:bold;cursor:pointer;"><i class="fa fa-check"></i> ' + full.StrStatus + '</span>';
-            } else {
-                Data += '<span style="color:red;font-weight:bold;cursor:pointer;"><i class="fa fa-times"></i> ' + full.StrStatus + '</span>';
+        },
+        {
+            "render": function (data, type, full, meta) {
+                var Data = "";
+                if (full.StrStatus == "Aktif") {
+                    Data += '<span style="color:green;font-weight:bold;cursor:pointer;"><i class="fa fa-check"></i> ' + full.StrStatus + '</span>';
+                } else {
+                    Data += '<span style="color:red;font-weight:bold;cursor:pointer;"><i class="fa fa-times"></i> ' + full.StrStatus + '</span>';
+                }
+                return Data;
             }
-            return Data;
+        },
+        {
+            "data": "Roles[1].RoleName"
+        },
+        {
+            "data": "IdUser",
+            "render": function (data, type, full, meta) {
+                var Data = "";
+                var ParamStatus = "SetStatus('" + full.IdUser + "','" + full.FirstName + "','" + full.StrStatus + "')";
+                Data += '<button type="button" onClick="EditUser(' + full.IdUser + ')" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Edit</button>&nbsp;&nbsp;';
+                Data += '&nbsp;&nbsp;&nbsp;';
+                if (full.StrStatus == "Aktif") {
+                    Data += '<button type="button" class="btn btn-danger btn-sm" onClick="' + ParamStatus + '"><i class="fa fa-times"></i> Deaktivasi</button>';
+                } else {
+                    Data += '<button type="button" class="btn btn-success btn-sm" onClick="' + ParamStatus + '"><i class="fa fa-check"></i> Aktivasi</button>';
+                }
+                data = Data;
+                return data;
+            }
         }
-    },
-    {
-        "data": "Roles[1].RoleName"
-    }
+        
     ],
     "bDestroy": true
 });
@@ -170,7 +169,7 @@ function SetStatus(IdUser, FullName, StrStatus) {
             closeOnConfirm: false
         },
             function () {
-                var Url = base_url + "/Users/SetUserInActive?SetIdUser=" + IdUser;
+                var Url = base_url + "/User/SetUserInActive?SetIdUser=" + IdUser;
                 $.ajax({
                     url: Url,
                     method: "GET",
@@ -227,7 +226,7 @@ function SetStatus(IdUser, FullName, StrStatus) {
             closeOnConfirm: false
         },
             function () {
-                var Url = base_url + "/Users/SetUserActive?SetIdUser=" + IdUser;
+                var Url = base_url + "/User/SetUserActive?SetIdUser=" + IdUser;
                 $.ajax({
                     url: Url,
                     method: "GET",

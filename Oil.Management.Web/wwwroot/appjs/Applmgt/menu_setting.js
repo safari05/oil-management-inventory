@@ -1,4 +1,5 @@
-﻿
+﻿/// <reference path="appl_settings.js" />
+
 // object urls
 const urls = {
     GetAppl: base_url + "/Applmgt/GetAppls",
@@ -11,12 +12,13 @@ const urls = {
 
 
 $(document).ready(function () {
-
+  
 });
 
 
 // generate to datatables
 function TabelMenuSetting(idAppl) {
+    console.log("ca");
     $('#TabelMenuSetting tfoot th').each(function () {
         var title = $(this).text();
         $(this).html('<input type="text" class="form-control" placeholder="Cari ' + title + '" />');
@@ -30,7 +32,7 @@ function TabelMenuSetting(idAppl) {
         lengthChange: false,
         scrollX: true,
         "ajax": {
-            "url": urls.GetApplMgtTask + "IdAppl=" + idAppl,
+            "url": base_url + "/applmgt/GetApplMgtTask",
             datatype: "json",
             "method": 'POST',
             "beforeSend": function (xhr) {
@@ -47,11 +49,9 @@ function TabelMenuSetting(idAppl) {
         columnDefs: [
             { targets: [0], width: "40%", visible: true, searchable: true },
             { targets: [1], width: "40%", visible: true, searchable: true },
-            { targets: [2], width: "15%", visible: true, searchable: true },
-            { targets: [3], width: "15%", visible: true, searchable: true },
+            { targets: [2], width: "15%", visible: true, searchable: true }
         ],
         "columns": [
-            { "data": "ApplName" },
             { "data": "ApplTaskName" },
             {
                 "data": "ControllerName",
@@ -136,7 +136,7 @@ $("select[name='IdAppl']").change(function () {
 function ComboGetParentMenu(handleData, IdApplTaskParent, IdAppl) {
    
     var Url = urls.GetApplParentMenu + "?IdApp=" + IdAppl;
-    console.log(Url);
+    console.log()
     $.ajax({
         url: Url,
         type: "GET",
@@ -145,7 +145,7 @@ function ComboGetParentMenu(handleData, IdApplTaskParent, IdAppl) {
             ProgressBar("wait");
         },
         success: function (responsesuccess) {
-            console.log(responsesuccess);
+           
             ProgressBar("success");
             if (responsesuccess.IsSuccess == true) {
                 console.log(responsesuccess);

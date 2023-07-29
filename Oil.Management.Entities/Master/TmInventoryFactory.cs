@@ -11,7 +11,8 @@ namespace Oil.Management.Entities.Master
     [Table("t_m_inventory_factory")]
     public class TmInventoryFactory
     {
-        [Key, Required]
+        [Key]
+         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_inventory_factory")]
         public int IdInventoryFactory { get; set; }
         [Column("purchase_order_id_po")]

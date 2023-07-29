@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Oil.Management.Entities.References;
 using Oil.Management.Shared;
+using Oil.Management.Shared.Constants;
 using Oil.Management.Shared.Interfaces;
 using Oil.Management.Shared.ViewModels.Reference;
 using System;
@@ -101,6 +102,18 @@ namespace Oil.Management.Services
             {
                 return common.GetErrorMessage(ServiceName + "EditTypeUser", ex);
             }
+        }
+
+        public List<SelectComboStrModel> GetSatuanVolume()
+        {
+            return (from a in JenisSatuanConstant.DictJenisSatuan
+                    select new SelectComboStrModel { Id = a.Key, Name = a.Value }).OrderBy(x => x.Id).ToList();
+        }
+
+        public List<SelectComboModel> GetStatusTransactionDict()
+        {
+            return (from a in StatusTransactionConstant.DictStatusTransaction
+                    select new SelectComboModel { Id = a.Key, Name = a.Value }).OrderBy(x => x.Id).ToList();
         }
 
         public TypeUserModel GetTypeUser(int IdTypeUser, out string oMessage)

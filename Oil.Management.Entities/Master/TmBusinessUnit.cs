@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 namespace Oil.Management.Entities.Master
 {   
     [Table("t_m_bussiness_unit")]
-    public class TmBussinessUnit
+    public class TmBusinessUnit
     {
-        [Key,Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_bussiness_unit")]
         public int IdBussinessUnit { get; set; }
 
@@ -19,11 +20,12 @@ namespace Oil.Management.Entities.Master
         public string BussinessName { get; set; }
 
         [Column("status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         [Column("created")]
         public DateTime Created { get; set; }
+
         [Column("updated")]
-        public DateTime Updated { get; set; }
+        public DateTime? Updated { get; set; }
     }
 }

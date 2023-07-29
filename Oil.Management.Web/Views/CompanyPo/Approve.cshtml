@@ -1,0 +1,144 @@
+﻿@using Oil.Management.Shared.ViewModels.Transaction
+
+@model TrxCompanyPurchaseOrderModel
+@{
+    ViewData["title"] = "Approve or Reject Purchase Company";
+}
+
+<section class="section">
+    <div class="section-header">
+        <h1> Transaction Contract</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a asp-controller="Home" asp-action="Index">Contract</a></div>
+            <div class="breadcrumb-item">Transaction of Purchase Order Company</div>
+        </div>
+    </div>
+
+    <div class="section-body">
+        <div class="card">
+            <form class="form-horizontal container" id="FormCreatePoCompany" enctype="multipart/form-data">
+                <div class="card-header">
+                    <h4 class="col-md-6"> Approve or Reject Purchase Company</h4>
+                </div>
+                <div class="card-body">
+                    <div class="col-sm-9">
+                         <input type="hidden" class="form-control" asp-for="IdTrxPo" name="IdTrxPo" id="IdTrxPo" readonly />
+                    </div>
+                    <div class="form-group form-row">
+                          <label class="col-form-label col-sm-3"  style="text-align:left"> Contract Name </label>
+                          <div class="col-sm-9">
+                              <select class="select2" disabled name="IdContract" style="width:600px">
+                                  <option value="0">-- Pilih Contract--</option>
+                                    @if(ViewBag.Contracts != null )
+                                    {
+                                        @foreach(var item in ViewBag.Contracts)
+                                        {
+                                        @if(item.Id == ViewBag.Contract)
+                                        {
+                                             <option value="@item.Id" selected> @item.Name</option>
+                                        }
+                                        else
+                                        {
+                                             <option value="@item.Id"> @item.Name</option>
+                                        }
+                                       
+                                        }
+                                    }
+                            </select>
+                          </div>
+                     </div>
+                    
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Purchase Code</label>
+                        <div class="col-sm-9">
+                             <input type="text" asp-for="CodePo" disabled  class="form-control col-sm-9"  name="CodePo" id="CodePo" placeholder="Input Purchase Code..."/>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Purchase Name</label>
+                        <div class="col-sm-9">
+                             <input type="text"  asp-for="PoName" disabled class="form-control col-sm-9"  name="PoName" id="PoName" placeholder="Input Purchase Number..."/>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Total Order</label>
+                        <div class="col-sm-9">
+                             <input type="text" disabled class="form-control col-sm-9" asp-for="Total"  name="TotalOrder" id="TotalOrder" placeholder="Input Total Order..."/>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Amount To Paid</label>
+                        <div class="col-sm-9">
+                             <input type="text" class="form-control col-sm-9" asp-for="Amount"  name="Amount" id="Amount" placeholder="Input Amount..."/>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Arrival Time</label>
+                        <div class="col-sm-9">
+                             <input type="date" class="form-control col-sm-9" asp-for="TimeArival"  name="TimeArival" id="TimeArival"  placeholder="Input Amount..."/>
+                        </div>
+                    </div>
+                     <div class="form-group form-row">
+                         <label class="col-form-label col-sm-3" style="text-align:left"> Satuan </label>
+                          <div class="col-sm-9">
+                              <select class="select2" disabled name="SatuanVolume" style="width:600px">
+                                  <option value="0">-- Pilih Satuan--</option>
+                                    @if(ViewBag.Satuans != null )
+                                    {
+                                        @foreach(var item in ViewBag.Satuans)
+                                        {
+                                            
+                                            @if(item.Name == ViewBag.SatuanVolume){
+                                                 <option value="@item.Id" selected=""> @item.Name</option>
+                                            }
+                                            else
+                                            {
+                                                 <option value="@item.Id"> @item.Name</option>
+                                            }
+                                       
+                                        }
+                                    }
+                            </select>
+                          </div>
+                     </div>
+                     <div class="form-group form-row">
+                         <label class="col-form-label col-sm-3" style="text-align:left"> Status </label>
+                          <div class="col-sm-9">
+                              <select class="select2" name="Status" style="width:600px">
+                                  <option value="0">-- Pilih Status--</option>
+                                    @if(ViewBag.Satuans != null )
+                                    {
+                                        @foreach(var item in ViewBag.StatusTransaction)
+                                        {
+                                            @if(item.Name == ViewBag.SatuanVolume){
+                                                 <option value="@item.Id" selected=""> @item.Name</option>
+                                            }
+                                            else
+                                            {
+                                                 <option value="@item.Id"> @item.Name</option>
+                                            }
+                                       
+                                        }
+                                    }
+                            </select>
+                          </div>
+                     </div>
+                     <div class="form-group form-row">
+                         <label class="col-form-label col-sm-3" style="text-align:left"> Note </label>
+                          <div class="col-sm-9">
+                              <textarea name="Description" class="form-control" id="Description" style="height:80px" ></textarea>
+                          </div>
+                     </div>
+                </div>
+                
+                 <div class="card-footer text-right"> 
+                         
+                        <button type="button" class="btn btn-secondary mr-1" onclick="@("window.location.href='" + @Url.Action("index", "factory") + "'");"><i class="fa fa-times-circle-o"></i> Kembali </button>
+                        <button type="button" class="btn btn-primary" id="BtnSaveFactory" onclick="SaveCompanyPo('Approve')"><i class="fa fa-save"></i> Simpan Data</button>
+                    
+                     </div>    
+                     
+           </form>
+        </div>
+    </div>
+</section>

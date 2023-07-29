@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Oil.Management.Entities.Master
 {
-    [Table("t_m_customer")]
+    [Table("t_m_customers")]
     public class TmCustomer
     {
-        [Key,Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_customer")]
         public int CustomerID { get; set; }
         [Column("customer_name")]
@@ -35,11 +36,26 @@ namespace Oil.Management.Entities.Master
         [Column("pic_email")]
         public  string PicEmail { get; set; }
         [Column("priority")]
-        public bool Priority { get; set; }
+        public int Priority { get; set; }
         [Column("id_subsidiary_company")]
         public int IdSubsidiaryCompany { get; set; }
         [Column("id_village")]
         public int IdVillage { get; set; }
+
+        [Column("status")]
+        public int Status { get; set; }
+
+        [Column("created_by")]
+        public int CreatedBy { get; set; }
+
+        [Column("created_dt")]
+        public DateTime CreatedDt { get; set; }
+
+        [Column("updated_by")]
+        public int? UpdatedBy { get; set; }
+
+        [Column("updated_dt")]
+        public DateTime? UpdatedDate { get; set; }
 
     }
 }

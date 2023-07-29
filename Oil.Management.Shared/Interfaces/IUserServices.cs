@@ -23,5 +23,9 @@ namespace Oil.Management.Shared.Interfaces
         string SetUserInActive(int IdUser, int SetIdUser, out string oMessage);
 
         string setPassword(string Password, out string oMessage);
+
+        List<RoleModel> GetRoles (out string oMessage);
+
+        
     }
 }

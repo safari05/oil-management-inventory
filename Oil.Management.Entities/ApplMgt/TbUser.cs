@@ -12,6 +12,7 @@ namespace Oil.Management.Entities.ApplMgt
     public class TbUser
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_user")]
         public int IdUser { get; set; }
         [Column("id_role")]

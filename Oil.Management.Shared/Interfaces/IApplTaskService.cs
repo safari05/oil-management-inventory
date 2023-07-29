@@ -1,4 +1,5 @@
-﻿using Oil.Management.Shared.ViewModels.ApplMgt;
+﻿using Oil.Management.Shared.ViewModels;
+using Oil.Management.Shared.ViewModels.ApplMgt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Oil.Management.Shared.Interfaces
     {
         // auth menu
         List<ApplTaskModel> GetMenus(int IdAppl, int IdUser, out string oMessage);
+        List<ApplTaskModel> GetApplTasks(int IdAppl, out string oMessage);
+        ApplTaskListModel GetApplTasks(int IdAppl, ReqDataTableModel Data, out string oMessage);
     }
 }

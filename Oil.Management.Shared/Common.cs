@@ -194,5 +194,15 @@ namespace Oil.Management.Shared
             return res.ToString();
         }
         #endregion
+
+        public string SetFullName(string FirstName, string MiddleName, string LastName)
+        {
+            string nama = FirstName;
+            if (!string.IsNullOrEmpty(MiddleName))
+                nama += " " + MiddleName;
+            if (!string.IsNullOrEmpty(LastName))
+                nama += " " + LastName;
+            return nama;
+        }
     }
 }

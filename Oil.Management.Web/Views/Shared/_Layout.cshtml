@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
 
-    <title>@ViewData["Title"] - ADM Schools</title>
+    <title>@ViewData["Title"] - Oil Management System</title>
     <!-- General CSS Files -->
     <!-- CSS General styles-->
     <link rel="stylesheet" href="~/css/style-shared.css" />
@@ -96,7 +96,8 @@
             <div hidden id="spinner"></div>
             @RenderBody()
         </div>
-
+         @Html.Partial("Components/GantiPassword")
+         @Html.Partial("Components/UpdateProfile")
 
             <footer class="main-footer">
                 <div class="footer-left">

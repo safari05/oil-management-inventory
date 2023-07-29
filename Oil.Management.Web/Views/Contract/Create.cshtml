@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["title"] = "Create Contract";
+}
+
+<section class="section">
+    <div class="section-header">
+        <h1> Transaction Contract</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a asp-controller="Home" asp-action="Index">Contract</a></div>
+            <div class="breadcrumb-item">Transaction of Contract To Factory</div>
+        </div>
+    </div>
+
+    <div class="section-body">
+        <div class="card">
+            <form class="form-horizontal container" id="FormCreateContract" enctype="multipart/form-data">
+                <div class="card-header">
+                    <h4 class="col-md-6"> Create Contract</h4>
+                </div>
+                <div class="card-body">
+                    <div class="col-sm-9">
+                         <input type="hidden" class="form-control" name="Id" id="Id" readonly />
+                    </div>
+                    <div class="form-group form-row">
+                          <label class="col-form-label col-sm-3" style="text-align:left"> Factory Name </label>
+                          <div class="col-sm-9">
+                              <select class="js-factory" name="IdFactory" style="width:600px">
+                                 
+                                </select>
+                          </div>
+                      </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Contract Name</label>
+                        <div class="col-sm-9">
+                             <input type="text"  class="form-control col-sm-9"  name="Name" id="Name" placeholder="Input Name Contract..."/>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Start Contract</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="date" name="StartContract" id="StartContract" />
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> End Contract</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="date" name="EndContract" id="EndContract" />
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> File Guarante</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" name="FileGuarante" id="FileGuarantes" />
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> PCT Domestic</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="PctDomestic" id="PctDomestic" />
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> PCT Export</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="PctExport" id="PctExport" />
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-form-label col-sm-3"> Description</label>
+                        <div class="col-sm-9">
+                           <textarea class="form-control" name="Description" id="Description" style="height:80px"></textarea>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                 <div class="card-footer text-right"> 
+                         
+                        <button type="button" class="btn btn-secondary mr-1" onclick="@("window.location.href='" + @Url.Action("index", "factory") + "'");"><i class="fa fa-times-circle-o"></i> Kembali </button>
+                        <button type="button" class="btn btn-primary" id="BtnSaveFactory" onclick="SaveContract('Add')"><i class="fa fa-save"></i> Simpan Data</button>
+                    
+                     </div>    
+                     
+           </form>
+        </div>
+    </div>
+</section>

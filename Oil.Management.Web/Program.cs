@@ -6,7 +6,10 @@ using Oil.Management.Services;
 using Oil.Management.Shared.Settings;
 using ApplMgt.Services;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -21,6 +24,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IApplTaskService, ApplTaskService>();
 builder.Services.AddScoped<IApplReferenceService, ApplReferenceService>();
+builder.Services.AddScoped<IMasterService, MasterService>();
+builder.Services.AddScoped<ITransaction, TransactionService>();
 
 builder.Services.AddMemoryCache();
 
@@ -31,7 +36,13 @@ builder.Services.AddControllersWithViews().AddJsonOptions(o =>
     o.JsonSerializerOptions.PropertyNamingPolicy = null;
     o.JsonSerializerOptions.DictionaryKeyPolicy = null;
 });
-// Add services to the container.
+
+builder.Services.AddCors(p=>p.AddPolicy("corspolicy", build =>
+{
+    build.WithOrigins("").AllowAnyMethod().AllowAnyHeader();
+}));
+    
+    // Add services to the container.
 
 
 // geting value param json parse to  models
@@ -41,6 +52,11 @@ builder.Services.Configure<AppMgtSettingModel>(appSettingsSection);
 var appSettings = appSettingsSection.Get<AppMgtSettingModel>();
 AppMgtSetting.ConnectionString = appSettings.ConnectionString;
 AppMgtSetting.Secret = appSettings.Secret;
+
+RefUploadService refUpload = new RefUploadService();
+refUpload.InitConstant();
+
+
 
 // set sessions
 builder.Services.AddSession(opts =>
@@ -54,6 +70,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 var app = builder.Build();
+//app.UsePathBase("/oil_inventory"); 
 
 IConfiguration configuration = app.Configuration;
 

@@ -24,6 +24,10 @@ namespace Oil.Management.Shared.ViewModels.ApplMgt
         public string LastName { get; set; }
         public string Address { get; set; }
         public string FileImage { get; set; }
+        
+        public int Subsidiary { get; set; }
+        public int Customer { get; set; }
+
         public List<RoleModel> Roles { get; set; }
     }
 }

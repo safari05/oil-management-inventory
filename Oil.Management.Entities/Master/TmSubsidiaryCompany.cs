@@ -11,9 +11,14 @@ namespace Oil.Management.Entities.Master
     [Table("t_m_subsidiary_company")]
     public class TmSubsidiaryCompany
     {
-        [Key, Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id_subsidiary_company")]
         public int IdSubsidiaryCompany { get; set; }
+        
+        [Column("id_company")]
+        public int IdCompany { get; set; }
+
         [Column("id_factory")]
         public int IdFactory { get; set; }
         [Column("id_bussiness_unit")]
@@ -33,14 +38,35 @@ namespace Oil.Management.Entities.Master
         public  string Email { get; set; }
         [Column("status")]
         public int Status { get; set; } 
+
         [Column("description")]
         public string Description { get; set; }
+
+        [Column("pic_name")]
         public string PicName { get; set; }
+
         [Column("pic_phone")]
         public string PicPhone { get; set; }
+
         [Column("pic_email")]
         public string PicEmail { get; set; }
+
         [Column("priority")]
         public int Priority { get; set; }
+
+        [Column("created_by")]
+        public int CreatedBy { get; set; }
+
+        [Column("created_dt")]
+        public DateTime CreatedDt{ get; set; }
+
+
+        [Column("updated_by")]
+        public int? UpdatedBy { get; set; }
+
+        [Column("updated_dt")]
+        public DateTime? UpdatedDt { get; set; }
+
+        
     }
 }
